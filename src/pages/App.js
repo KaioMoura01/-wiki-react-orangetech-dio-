@@ -1,7 +1,7 @@
 const App = () => {
   return (
     <div className="App">
-      Olá
+      <img src="https://github.com/"/>
     </div>
   );
 }
