@@ -19,14 +19,13 @@ const App = () => {
         setRepos(prev => [...prev, data]);
         setCurrentRepo('');
         return;
-      } 
-    }else{
-      alert('Repositório não encontrado.');
-    } 
+      }
+    }
+    alert('Repositório não encontrado.');
   }
 
-  const handleRemoveRepo = () => {
-    //TODO
+  const handleRemoveRepo = async () => {
+    
   }
   
   return (
