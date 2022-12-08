@@ -6,7 +6,7 @@ const ItemRepo = ({repo}) => {
         <h3>{repo.name}</h3>
         <p>{repo.full_name}</p>
         <a href={repo.html_url} target='_blank' rel="noreferrer">Ver repositório</a><br/>
-        <a href="#" className="remover">Remover</a>
+        <a href={repo.html_url} target='_blank' rel="noreferrer" className="remover">Remover</a>
         <hr/>
     </ItemContainer>
   )
