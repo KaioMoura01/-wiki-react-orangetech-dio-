@@ -14,9 +14,19 @@ const App = () => {
   const handleSearchRepo = async () => {
     const {data} = await api.get(`repos/${currentRepo}`);
     if(data.id){
-      setRepos(prev => [...prev, data]);
-      setCurrentRepo('');
-    }
+      const isExist = repos.find(repo => repo.id === data.id);
+      if(!isExist){
+        setRepos(prev => [...prev, data]);
+        setCurrentRepo('');
+        return;
+      } 
+    }else{
+      alert('Repositório não encontrado.');
+    } 
+  }
+
+  const handleRemoveRepo = () => {
+    //TODO
   }
   
   return (
@@ -24,7 +34,7 @@ const App = () => {
       <img src={logo} alt="logo" height={72} width={72}/>
       <Input value={currentRepo} onChange={(e) => setCurrentRepo(e.target.value)}/>
       <Button onClick={handleSearchRepo}/>
-      {repos.map(repo => <ItemRepo repo={repo}/>)}
+      {repos.map(repo => <ItemRepo repo={repo} handleRemoveRepo={handleRemoveRepo}/>)}
     </Container>
   );
 }

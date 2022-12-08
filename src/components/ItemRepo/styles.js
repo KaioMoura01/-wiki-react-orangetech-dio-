@@ -21,6 +21,10 @@ export const ItemContainer = styled.div`
         margin-top: 20px;
     }
 
+    a{
+        text-decoration:none;
+    }
+
     hr{
         color: #FAFAFA60;
         margin: 20px 0;
