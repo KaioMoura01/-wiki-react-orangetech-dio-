@@ -27,8 +27,8 @@ const App = () => {
     alert('Repositório não encontrado.');
   }
 
-  const handleRemoveRepo = async () => {
-    
+  const handleRemoveRepo = (id) => {
+    console.log("Removendo registro de id:", id)
   }
   
   return (
