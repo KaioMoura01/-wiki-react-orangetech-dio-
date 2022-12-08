@@ -4,6 +4,7 @@ import Button from "../components/button";
 import ItemRepo from "../components/ItemRepo";
 import { useState } from "react";
 import { api } from "../services/api";
+import logo from "../assets/logo-white.png"
 
 const App = () => {
   
@@ -13,17 +14,17 @@ const App = () => {
   const handleSearchRepo = async () => {
     const {data} = await api.get(`repos/${currentRepo}`);
     if(data.id){
-      setRepos(prev => [...prev, data])
+      setRepos(prev => [...prev, data]);
+      setCurrentRepo('');
     }
   }
   
   return (
     <Container>
-      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
-        alt="logo" height={72} width={72}/>
+      <img src={logo} alt="logo" height={72} width={72}/>
       <Input value={currentRepo} onChange={(e) => setCurrentRepo(e.target.value)}/>
       <Button onClick={handleSearchRepo}/>
-      {repos.map(repo => <ItemRepo/>)}
+      {repos.map(repo => <ItemRepo repo={repo}/>)}
     </Container>
   );
 }

@@ -18,4 +18,9 @@ export const InputContainer = styled.div`
         color: #FFFFFF;
         font-size: 20px;
     }
+
+    textarea:focus, input:focus{
+        box-shadow: 0 0 0 0;
+        outline: 0;
+    }
 `
