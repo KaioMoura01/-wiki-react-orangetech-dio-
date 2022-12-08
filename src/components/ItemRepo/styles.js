@@ -23,6 +23,8 @@ export const ItemContainer = styled.div`
 
     a{
         text-decoration:none;
+        color:inherit;
+        font-weight: 700;
     }
 
     hr{
