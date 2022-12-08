@@ -19,6 +19,9 @@ const App = () => {
         setRepos(prev => [...prev, data]);
         setCurrentRepo('');
         return;
+      }else{
+        alert('O repositório buscado já está em tela.');
+        return;
       }
     }
     alert('Repositório não encontrado.');
